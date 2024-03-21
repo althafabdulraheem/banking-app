@@ -22,7 +22,7 @@
                     @foreach($statements as $statement)
                     <tr>
                         <td>{{$loop->index+1}}</td>
-                        <td>{{$statement->created_at}}</td>
+                        <td>{{\Carbon\Carbon::parse($statement->created_at)->format('d-m-y h:i a')}}</td>
                         <td>{{$statement->amount}}</td>
                         <td>{{$statement->type}}</td>
                         <td>{{$statement->details}}</td>
